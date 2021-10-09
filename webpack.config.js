@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.jsx",
+    entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: "[name].[contenthash:8].js"
@@ -12,19 +12,23 @@ module.exports = {
     resolve: {
         alias: {
             '@components': path.resolve(__dirname, './src/components')
-        }
+        },
+        extensions: ['.jsx','.tsx']
     },
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        cacheDirectory: true,
-                        compact: true,
-                    }
-                },
+                test: /\.(js(x?)|ts(x?))$/,
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            cacheDirectory: true,
+                            compact: true,
+                        }
+                    },
+                    'ts-loader'
+                ],
                 exclude: /node_moudles/
             }
         ]
