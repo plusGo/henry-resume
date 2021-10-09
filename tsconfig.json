@@ -27,6 +27,8 @@
     ]
   },
   "include": [
-    "./src/**/*"
+  ],
+  "files": [
+    "./src/index.tsx"
   ]
 }

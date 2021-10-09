@@ -11,7 +11,6 @@ module.exports = {
     target: 'web',
     resolve: {
         alias: {
-            '@components': path.resolve(__dirname, './src/components')
         },
         extensions: ['.jsx','.tsx']
     },

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 
-const Index: FC = () => {
+const LanguageSwitch: FC = () => {
     return (
         <div>
             123
@@ -8,4 +8,4 @@ const Index: FC = () => {
     );
 };
 
-export default Index;
+export default LanguageSwitch;
